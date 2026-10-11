@@ -16,6 +16,7 @@ frontend/dist/
 ml/dataset/*
 !ml/dataset/.gitkeep
 models/*.keras
+!models/plant_disease_model.keras
 models/*.h5
 models/training_history.json
 models/evaluation_report.json
