@@ -1,0 +1,11 @@
+flask>=3.0,<4
+flask-cors>=4.0
+python-dotenv>=1.0
+gunicorn>=22.0
+numpy>=1.26
+pillow>=10.3
+opencv-python-headless>=4.9
+tensorflow>=2.16,<2.20
+scikit-learn>=1.4
+matplotlib>=3.8
+pytest>=8.0

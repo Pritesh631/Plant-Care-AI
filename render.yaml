@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: plantcare-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt && python download_model.py
+    startCommand: gunicorn "app:create_app()" --workers 1 --threads 4 --timeout 120 --bind 0.0.0.0:$PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: MODEL_URL          # direct download link to plant_disease_model.keras
+        sync: false
+      - key: MODEL_PATH
+        value: ../models/plant_disease_model.keras
+      - key: CLASS_NAMES_PATH
+        value: ../models/class_names.json
+      - key: CORS_ORIGINS       # your deployed frontend URL
+        sync: false
+      - key: MAX_UPLOAD_MB
+        value: "5"

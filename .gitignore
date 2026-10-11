@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Env
+.env
+
+# Node
+node_modules/
+frontend/dist/
+
+# Data and models (large / licensed separately)
+ml/dataset/*
+!ml/dataset/.gitkeep
+models/*.keras
+models/*.h5
+models/training_history.json
+models/evaluation_report.json
+models/confusion_matrix.png
+
+# Runtime data
+backend/uploads/
+backend/*.db
