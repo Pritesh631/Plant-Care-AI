@@ -1,6 +1,7 @@
 services:
   - type: web
     name: plantcare-api
+    plan: free
     runtime: python
     buildCommand: pip install -r backend/requirements.txt && python backend/download_model.py
     startCommand: PYTHONPATH=backend gunicorn "app:create_app()" --workers 1 --threads 4 --timeout 120 --bind 0.0.0.0:$PORT
